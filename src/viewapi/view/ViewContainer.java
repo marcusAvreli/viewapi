@@ -74,6 +74,17 @@ public interface ViewContainer  extends  RootPaneContainer,ApplicationAware,View
 	public abstract void setTitle(String title);
 
 	public abstract void viewInit() throws ViewException;
+	
+	public abstract void viewInitUIState() throws ViewException;
+	public abstract void viewInitBackActions() throws ViewException;
 	public abstract void viewClose() throws ViewException;
+
+	/**
+	 * Once background actions has been performed we can establish the 
+	 * final aspect of the view within this method.
+	 * 
+	 * @throws ViewException
+	 */
+	public abstract void viewFinalUIState() throws ViewException;
 
 }
